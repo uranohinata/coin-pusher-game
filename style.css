@@ -30,27 +30,28 @@ h1 { font-size: clamp(24px, 7vw, 34px); letter-spacing: .06em; margin: 0; }
 .stat-card { flex: 1; background: rgba(21, 29, 53, .9); border: 1px solid #2e3b62; border-radius: 14px; padding: 10px 8px; text-align: center; }
 .stat-card span { display: block; color: #a7b3d2; font-size: 11px; }
 .stat-card strong { display: block; color: var(--gold); font-size: 24px; margin-top: 2px; }
-.machine { position: relative; height: 445px; overflow: hidden; border: 5px solid #6f4a1f; border-radius: 24px 24px 16px 16px; background: linear-gradient(#192c58 0 47%, #c2732b 47% 100%); box-shadow: inset 0 0 30px #040711, 0 14px 40px rgba(0,0,0,.4); }
+.machine { position: relative; height: 445px; overflow: hidden; border: 5px solid #6f4a1f; border-radius: 24px 24px 16px 16px; background: linear-gradient(#192c58 0 35%, #c2732b 35% 100%); box-shadow: inset 0 0 30px #040711, 0 14px 40px rgba(0,0,0,.4); perspective: 760px; }
 .machine::after { content: ""; position: absolute; inset: 0; pointer-events: none; border: 2px solid rgba(255,255,255,.2); border-radius: 17px; }
-.back-wall { position: absolute; inset: 0 0 52%; background: linear-gradient(160deg, #254a7b, #101c3b); }
+.machine::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; bottom: 94px; background: linear-gradient(145deg, #a9581e, #e08b36 45%, #73300f); transform: rotateX(52deg); transform-origin: bottom; border: 2px solid #4d210d; box-shadow: inset 0 0 22px rgba(50,14,2,.55), 0 18px 20px rgba(22,5,0,.42); }
+.back-wall { position: absolute; inset: 0 0 65%; background: linear-gradient(160deg, #254a7b, #101c3b); }
 .jackpot { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); color: var(--gold); font-weight: 900; font-size: 13px; letter-spacing: .18em; text-shadow: 0 0 12px #ff8c00; white-space: nowrap; }
 .jackpot span { color: #ff6d9a; margin-left: 4px; }
 .decor-coins { display: flex; justify-content: space-around; padding: 62px 18px 0; opacity: .48; font-size: 22px; }
-.coin-field { position: absolute; inset: 65px 15px 118px; z-index: 3; }
+.coin-field { position: absolute; inset: 78px 14% 138px; z-index: 3; transform: rotateX(48deg); transform-origin: bottom; }
 .coin { position: absolute; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(circle at 32% 24%, #fff8c8 0 9%, #ffe98b 16%, var(--gold) 43%, var(--gold-deep) 82%); border: 2px solid #ffeaa0; box-shadow: inset 2px 2px 3px rgba(255,255,255,.7), inset -3px -4px 4px rgba(123,59,8,.55), 0 4px 0 #8b4515, 0 7px 8px rgba(32,12,2,.48); color: #a76010; font-size: 15px; font-style: normal; font-weight: 900; text-shadow: 1px 1px 0 #ffe99b; animation: coin-drop .4s ease-out; transform-style: preserve-3d; }
 .coin::after { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(139,76,15,.55); border-radius: 50%; box-shadow: inset 1px 1px 1px rgba(255,255,255,.65); }
 .coin.falling { animation: falling .6s cubic-bezier(.18,.8,.25,1) forwards; }
 @keyframes coin-drop { from { transform: translateY(-30px) scale(.7); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
 @keyframes falling { to { transform: translateY(230px) rotate(260deg); opacity: .1; } }
 .shelf { position: absolute; left: 12px; right: 12px; height: 17px; border-radius: 6px; background: linear-gradient(#ffd27b, #9e4f19); box-shadow: 0 5px 0 #673112, 0 10px 16px rgba(0,0,0,.3); z-index: 4; }
-.shelf-back { top: 207px; }
-.shelf-front { bottom: 106px; height: 20px; z-index: 6; }
-.pusher { position: absolute; left: 6%; right: 6%; bottom: 150px; height: 72px; border-radius: 12px 12px 5px 5px; background: linear-gradient(90deg, #7d3510 0%, #e9a43c 7%, #ffc95e 23%, #b8601d 52%, #ffd16b 78%, #8d3c12 100%); z-index: 5; box-shadow: 0 8px 0 #64290f, 0 14px 14px rgba(40,13,2,.45), inset 0 3px 0 rgba(255,242,164,.75), inset 0 -7px 0 rgba(91,31,7,.38); transition: transform .42s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; }
+.shelf-back { top: 208px; left: 18%; right: 18%; transform: rotateX(48deg); transform-origin: bottom; }
+.shelf-front { bottom: 142px; left: 8%; right: 8%; height: 26px; z-index: 6; transform: rotateX(48deg); transform-origin: bottom; }
+.pusher { position: absolute; left: 10%; right: 10%; bottom: 146px; height: 68px; border-radius: 12px 12px 5px 5px; background: linear-gradient(90deg, #7d3510 0%, #e9a43c 7%, #ffc95e 23%, #b8601d 52%, #ffd16b 78%, #8d3c12 100%); z-index: 5; box-shadow: 0 8px 0 #64290f, 0 14px 14px rgba(40,13,2,.45), inset 0 3px 0 rgba(255,242,164,.75), inset 0 -7px 0 rgba(91,31,7,.38); transition: transform .42s cubic-bezier(.2,.8,.2,1); transform: rotateX(48deg); transform-origin: bottom; transform-style: preserve-3d; }
 .pusher::before { content: ""; position: absolute; left: 8px; right: 8px; bottom: -8px; height: 12px; border-radius: 0 0 8px 8px; background: linear-gradient(#b7601d, #64270e); box-shadow: inset 0 2px 2px rgba(255,201,91,.45); }
 .pusher::after { content: ""; position: absolute; top: 9px; left: 12%; right: 12%; height: 5px; border-radius: 50%; background: rgba(255,239,155,.7); filter: blur(1px); }
-.pusher.push { transform: translateY(-38px); }
+.pusher.push { transform: rotateX(48deg) translateY(-38px); }
 .pusher-face { height: 15px; margin: 14px 10px; border-radius: 6px; background: linear-gradient(90deg, #ffdb77, #bd651e, #ffdb77); opacity: .7; }
-.drop-zone { position: absolute; left: 0; right: 0; bottom: 0; height: 104px; background: linear-gradient(#b05b21, #733114); z-index: 7; display: grid; place-items: center; }
+.drop-zone { position: absolute; left: -2%; right: -2%; bottom: -3px; height: 112px; background: linear-gradient(#d9822f 0 12%, #a34a18 13% 38%, #69280f 100%); border-top: 5px solid #f0ad4a; box-shadow: 0 -10px 18px rgba(56,15,2,.45), inset 0 8px 0 rgba(255,203,103,.28); transform: perspective(460px) rotateX(18deg); transform-origin: top; z-index: 7; display: grid; place-items: center; }
 .drop-zone span { color: #3c190b; font-size: 12px; font-weight: 900; letter-spacing: .22em; }
 .drop-coins { position: absolute; inset: 0; }
 .drop-coin { position: absolute; bottom: 8px; font-size: 25px; animation: collect .7s ease-out forwards; }
@@ -66,4 +67,4 @@ h1 { font-size: clamp(24px, 7vw, 34px); letter-spacing: .06em; margin: 0; }
 .drop-button:active { transform: translateY(3px); box-shadow: 0 1px 0 #9c4c16; }
 .drop-button:disabled { filter: grayscale(1); opacity: .55; cursor: not-allowed; }
 .reset-button { display: block; margin: 10px auto 0; padding: 8px 14px; color: #a7b3d2; font-size: 11px; }
-@media (max-width: 380px) { .machine { height: 400px; } .pusher { bottom: 145px; } .shelf-front { bottom: 101px; } .drop-zone { height: 98px; } }
+@media (max-width: 380px) { .machine { height: 400px; } .pusher { bottom: 139px; } .shelf-front { bottom: 132px; } .drop-zone { height: 100px; } }
