@@ -1,33 +1,6 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#111827" />
-    <title>コインプッシャー</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="app-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">ARCADE MINI GAME</p>
-          <h1>コインプッシャー</h1>
-        </div>
-        <button id="sound-toggle" class="icon-button" aria-label="サウンド切替">🔊</button>
-      </header>
-      <section class="stats" aria-label="ゲーム情報">
-        <div class="stat-card"><span>所持コイン</span><strong id="coin-count">30</strong></div>
-        <div class="stat-card"><span>スコア</span><strong id="score">0</strong></div>
-        <div class="stat-card"><span>ハイスコア</span><strong id="high-score">0</strong></div>
-      </section>
-      <section class="machine" aria-label="コインプッシャーゲーム">
-        <div class="machine-glow"></div><div class="back-wall"><div class="jackpot">JACKPOT <span>×10</span></div><div class="decor-coins" aria-hidden="true"><i>🪙</i><i>🪙</i><i>🪙</i><i>🪙</i></div></div>
-        <div id="coin-field" class="coin-field" aria-live="polite"></div><div class="shelf shelf-back"></div><div class="pusher"><div class="pusher-face"></div></div><div class="shelf shelf-front"></div>
-        <div class="drop-zone"><span>DROP</span><div id="drop-coins" class="drop-coins"></div></div><div id="message" class="game-message">コインを投入してスタート！</div>
-      </section>
-      <section class="controls"><div class="lane-control"><span>投入レーン</span><div class="lane-dots" id="lane-dots"><button class="lane-dot active" data-lane="0" aria-label="左レーン"></button><button class="lane-dot" data-lane="1" aria-label="中央レーン"></button><button class="lane-dot" data-lane="2" aria-label="右レーン"></button></div></div><button id="drop-button" class="drop-button"><span>🪙</span> コインを投入</button></section>
-      <button id="reset-button" class="reset-button">ゲームをリセット</button>
-    </main><script src="script.js"></script>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="theme-color" content="#111827"><title>コインプッシャー</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main class="app-shell"><header class="topbar"><div><p class="eyebrow">ARCADE MINI GAME</p><h1>コインプッシャー</h1></div><button id="sound-toggle" class="icon-button" aria-label="サウンド切替">🔊</button></header><section class="stats" aria-label="ゲーム情報"><div class="stat-card"><span>所持コイン</span><strong id="coin-count">30</strong></div><div class="stat-card"><span>スコア</span><strong id="score">0</strong></div><div class="stat-card"><span>ハイスコア</span><strong id="high-score">0</strong></div></section><section class="machine" aria-label="コインプッシャーゲーム"><div class="back-wall"><div class="jackpot">JACKPOT <span>×10</span></div><div class="decor-coins" aria-hidden="true"><i>🪙</i><i>🪙</i><i>🪙</i><i>🪙</i></div></div><div id="coin-field" class="coin-field"></div><div class="shelf shelf-back"></div><div class="pusher"><div class="pusher-face"></div></div><div class="shelf shelf-front"></div><div class="drop-zone"><span>DROP</span><div id="drop-coins" class="drop-coins"></div></div><div id="message" class="game-message">コインを投入してスタート！</div></section><section class="controls"><div class="lane-control"><span>投入レーン</span><div class="lane-dots"><button class="lane-dot active" data-lane="0" aria-label="左レーン"></button><button class="lane-dot" data-lane="1" aria-label="中央レーン"></button><button class="lane-dot" data-lane="2" aria-label="右レーン"></button></div></div><button id="drop-button" class="drop-button">🪙 コインを投入</button></section><button id="reset-button" class="reset-button">ゲームをリセット</button></main><script src="script.js"></script></body></html>
