@@ -47,8 +47,9 @@ h1 { font-size: clamp(24px, 7vw, 34px); letter-spacing: .06em; margin: 0; }
 .lane-rails i:nth-child(2) { left: 50%; }
 .lane-rails i:nth-child(3) { right: 16%; }
 .coin-field { position: absolute; inset: 78px 14% 138px; z-index: 3; transform: rotateX(20deg); transform-origin: bottom; }
-.coin { position: absolute; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(circle at 32% 24%, #fff8c8 0 9%, #ffe98b 16%, var(--gold) 43%, var(--gold-deep) 82%); border: 2px solid #ffeaa0; box-shadow: inset 2px 2px 3px rgba(255,255,255,.7), inset -3px -4px 4px rgba(123,59,8,.55), 0 4px 0 #8b4515, 0 7px 8px rgba(32,12,2,.48); color: #a76010; font-size: 15px; font-style: normal; font-weight: 900; text-shadow: 1px 1px 0 #ffe99b; animation: coin-drop .4s ease-out; transform: scale(var(--depth)) rotate(var(--tilt)); transform-style: preserve-3d; }
-.coin::after { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(139,76,15,.55); border-radius: 50%; box-shadow: inset 1px 1px 1px rgba(255,255,255,.65); }
+.coin { position: absolute; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(circle at 30% 20%, #fffde0 0 5%, #fff0a0 13%, #e8ad35 31%, #b96c12 68%, #70400d 100%); border: 2px solid #ffeaa0; box-shadow: inset 2px 2px 3px rgba(255,255,255,.8), inset -3px -4px 5px rgba(80,35,3,.72), 0 4px 0 #6c350d, 0 7px 9px rgba(32,12,2,.55); color: #7c4509; font-size: 15px; font-style: normal; font-weight: 900; text-shadow: 1px 1px 0 #ffe7a0; animation: coin-drop .4s ease-out; transform: scale(var(--depth)) rotate(var(--tilt)); transform-style: preserve-3d; }
+.coin::before { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(255,232,133,.78); border-radius: 50%; box-shadow: inset 1px 1px 2px rgba(255,255,255,.65), inset -1px -1px 2px rgba(113,52,5,.65); }
+.coin::after { content: "✦"; position: absolute; inset: 8px; display: grid; place-items: center; border: 1px solid rgba(139,76,15,.48); border-radius: 50%; color: rgba(255,238,156,.7); font-size: 7px; text-shadow: 0 1px 1px #744006; }
 .coin.falling { animation: falling .6s cubic-bezier(.18,.8,.25,1) forwards; }
 @keyframes coin-drop { from { transform: translateY(-30px) scale(.7); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
 @keyframes falling { to { transform: translateY(230px) rotate(260deg); opacity: .1; } }
@@ -65,7 +66,8 @@ h1 { font-size: clamp(24px, 7vw, 34px); letter-spacing: .06em; margin: 0; }
 .drop-zone { position: absolute; left: -2%; right: -2%; bottom: -3px; height: 112px; background: linear-gradient(#d9822f 0 12%, #a34a18 13% 38%, #69280f 100%); border-top: 5px solid #f0ad4a; box-shadow: 0 -10px 18px rgba(56,15,2,.45), inset 0 8px 0 rgba(255,203,103,.28); transform: perspective(700px) rotateX(8deg); transform-origin: top; z-index: 7; display: grid; place-items: center; }
 .drop-zone span { color: #3c190b; font-size: 12px; font-weight: 900; letter-spacing: .22em; }
 .drop-coins { position: absolute; inset: 0; }
-.drop-coin { position: absolute; bottom: 8px; font-size: 25px; animation: collect .7s ease-out forwards; }
+.drop-coin { position: absolute; bottom: 8px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(circle at 30% 20%, #fffde0 0 5%, #fff0a0 13%, #e8ad35 31%, #b96c12 68%, #70400d 100%); border: 2px solid #ffeaa0; box-shadow: inset 2px 2px 3px rgba(255,255,255,.75), inset -3px -3px 4px rgba(80,35,3,.72), 0 3px 0 #6c350d; color: #7c4509; font-size: 14px; font-weight: 900; text-shadow: 1px 1px 0 #ffe7a0; animation: collect .7s ease-out forwards; }
+.drop-coin::before { content: ""; position: absolute; inset: 4px; border: 1px solid rgba(255,232,133,.78); border-radius: 50%; }
 @keyframes collect { 0% { transform: translateY(-60px) rotate(0); opacity: 1; } 100% { transform: translateY(5px) rotate(360deg); opacity: .2; } }
 .game-message { position: absolute; z-index: 10; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 9px 14px; border-radius: 20px; background: rgba(8, 13, 30, .8); color: #fff; font-size: 13px; text-align: center; pointer-events: none; opacity: 0; transition: opacity .25s; }
 .game-message.show { opacity: 1; }
