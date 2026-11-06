@@ -38,7 +38,7 @@ function showMessage(text) {
 function addCoin(lane) {
   const coin = document.createElement("i");
   coin.className = "coin";
-  coin.textContent = "¢";
+  coin.textContent = "¥";
   const laneX = [16, 47, 76][lane];
   coin.style.left = `${laneX + (Math.random() * 8 - 4)}%`;
   coin.style.top = `${18 + Math.random() * 62}%`;
@@ -51,7 +51,7 @@ function addCoin(lane) {
 function collectCoin() {
   const coin = document.createElement("span");
   coin.className = "drop-coin";
-  coin.textContent = "🪙";
+  coin.textContent = "¥";
   coin.style.left = `${10 + Math.random() * 80}%`;
   dropCoins.appendChild(coin);
   setTimeout(() => coin.remove(), 750);
@@ -72,6 +72,7 @@ function drop() {
     showMessage("コインがありません！");
     return;
   }
+
   state.coins -= 1;
   addCoin(state.lane);
   dropButton.classList.add("firing");
@@ -83,6 +84,7 @@ function drop() {
     pusher.classList.remove("push");
     document.querySelector(".machine").classList.remove("shake");
   }, 450);
+
   const lucky = Math.random() < 0.18;
   if (lucky) {
     const reward = Math.random() < 0.12 ? 10 : 2;
